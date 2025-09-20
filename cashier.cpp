@@ -73,7 +73,7 @@ void displayCashier(const bookType& book, double subtotal, double tax, double to
   cout << setw(80) << string(80, '-') << endl;
   //Output book information
   cout << '-' << setw(3) << book.quantity << "  " << setw(13) << book.isbn << " " << setw(37) << book.title << " $" << right << setw(7) << book.price;
-  doubel singleTotal = book.quantity * book.price;
+  double singleTotal = book.quantity * book.price;
   cout << "    $" << setw(7) << singleTotal << " -" << endl;
   //Empty Lines after book information
   cout << left;
