@@ -64,21 +64,28 @@ void displayCashier(const bookType& book, double subtotal, double tax, double to
 {
   cout << "\033[H\033[2J" << endl;
   cout << left;
+  auto oldFlags = cout.flags();       // save current flags
+  auto oldPrecision = cout.precision();
   cout << setw(80) << string(80, '-') << endl;
   cout << setw(79) << '-' << '-' << endl;
   cout << '-' << setw(24) << "Serendipity Book Sellers" << setw(54) << string(54, ' ') << '-' << endl;
   cout << setw(79) << '-' << '-' << endl;
   cout << '-' << "Date: " << setw(8) << book.date << setw(64) << string(64, ' ') << '-' << endl;
-  cout << '-' << "QTY  ISBN          TITLE" << setw(54) << string(54, ' ') << '-' << endl;
+  cout << '-' << "QTY  ISBN          TITLE" << setw(54) << string(54, ' ') << '-' << endl; 
   cout << setw(80) << string(80, '-') << endl;
   //Output book information
-  cout << '-' << setw(3) << book.quantity << "  " << setw(13) << book.isbn << " " << setw(37) << book.title << " $" << right << setw(7) << book.price;
+  cout << '-' << setw(3) << book.quantity << "  " << setw(13) << book.isbn << " " << setw(37) << book.title;
+  cout << fixed << setprecision(2) << showpoint << " $" << right << setw(7) << book.price;
   double singleTotal = book.quantity * book.price;
   cout << "    $" << setw(7) << singleTotal << " -" << endl;
+  //Reset flags
+  cout.flags(oldFlags);
+  cout.precision(oldPrecision);
   //Empty Lines after book information
   cout << left;
   cout << setw(79) << '-' << '-' << endl;
   cout << setw(79) << '-' << '-' << endl;
+  cout << fixed << setprecision(2) << showpoint;
   cout << setw(58) << '-' << setw(12) << "Subtotal" << "$" << setw(7) << right << subtotal << " -" << endl;
   cout << left << setw(58) << '-' << setw(12) << "Tax" << "$" << setw(7) << right << tax << " -" << endl;
   cout << left << setw(58) << '-' << setw(12) << "Total"  << "$" << setw(7) << right << total << " -" << endl;
