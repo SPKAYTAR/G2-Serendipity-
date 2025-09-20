@@ -21,26 +21,67 @@ struct bookType {
   string title;
   double price;
 };
-void displayCashier();
+void displayCashier(const bookType& book, double subtotal, double tax, double total);
 int main()
 {
-  cout << "\033[H\033[2J" << endl
+   cout << "\033[H\033[2J" << endl;
+   bookType book = getBookInfo();
+
+    double subtotal = book.quantity * book.price;
+    double tax      = subtotal * 0.06;
+    double total    = subtotal + tax;
+  
+    displayCashier(book, subtotal, tax, total);
+    return 0;
 }
-void displayCashier()
+bookType getBookInfo()
 {
-  cout << "\033[H\033[2J" << endl
+    bookType book;
+    cout << "Serendipity Book Sellers" << endl;
+    cout << "Cashier Module" << endl;
+  
+    cout << "Date: ";
+    getline(cin, book.date);
+  
+    cout << "Quantity: ";
+    cin >> book.quantity;
+    cin.ignore(); // clear leftover newline
+
+    cout << "ISBN: ";
+    getline(cin, book.isbn);
+
+    cout << "Title: ";
+    getline(cin, book.title);
+
+    cout << "Price: ";
+    cin >> book.price;
+
+    return book;
+    return book;
+}
+void displayCashier(const bookType& book, double subtotal, double tax, double total)
+{
+  cout << "\033[H\033[2J" << endl;
   cout << left;
-  cout << setw(80) << string('-', 80) << endl;
+  cout << setw(80) << string(80, '-') << endl;
   cout << setw(79) << '-' << '-' << endl;
-  cout << '-' << setw(24) << "Serendipity Book Sellers" << setw(54) << string(' ', 54) << '-' << endl;
+  cout << '-' << setw(24) << "Serendipity Book Sellers" << setw(54) << string(54, ' ') << '-' << endl;
   cout << setw(79) << '-' << '-' << endl;
-  cout << '-' << "Date: " << setw(8) << currentDate << setw(64) << string(' ', 64) << '-' << endl;
-  cout << '-' << "QTY  ISBN          TITLE" << setw(54) << string(' ', 54) << '-' << endl;
-  cout << setw(80) << string('-', 80) << endl;
-  cout << '-' << setw(3) << book.quantity << "  " << setw(13) << book.isbn << setw(37) << book.title << " $" << right << setw(7) << book.price;
+  cout << '-' << "Date: " << setw(8) << currentDate << setw(64) << string(64, ' ') << '-' << endl;
+  cout << '-' << "QTY  ISBN          TITLE" << setw(54) << string(54, ' ') << '-' << endl;
+  cout << setw(80) << string(80, '-') << endl;
+  //Output book information
+  cout << '-' << setw(3) << book.quantity << "  " << setw(13) << book.isbn << " " << setw(37) << book.title << " $" << right << setw(7) << book.price;
   cout << "    $" << setw(7) << singleTotal << " -" << endl;
+  //Empty Lines after book information
   cout << left;
   cout << setw(79) << '-' << '-' << endl;
   cout << setw(79) << '-' << '-' << endl;
-  cout << 
+  cout << setw(58) << '-' << setw(12) << "Subtotal" << "$" << setw(7) << right << subtotal << " -" << endl;
+  cout << left << setw(58) << '-' << setw(12) << "Tax" << "$" << setw(7) << right << tax << " -" << endl;
+  cout << left << setw(58) << '-' << setw(12) << "Total"  << "$" << setw(7) << right << total << " -" << endl;
+  cout << left;
+  cout << setw(79) << '-' << '-' << endl;
+  cout << '- ' << "Thank You For Shopping At Serendipity!" << string(39, ' ') << '-' << endl;
+  return;
 }
