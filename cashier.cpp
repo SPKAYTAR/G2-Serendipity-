@@ -33,6 +33,9 @@ int main()
     double total    = subtotal + tax;
   
     displayCashier(book, subtotal, tax, total);
+    string exitString;
+    cout << endl << endl << "Press ENTER to return to the main menu...";
+    getline(cin, exitString); // waits for user to press Enter
     return 0;
 }
 bookType getBookInfo()
