@@ -14,3 +14,33 @@
 #include <thread> //needed for pauseSeconds(x);
 #include <chrono>
 using namespace std;
+struct bookType {
+  string date;
+  int quantity;
+  string isbn;
+  string title;
+  double price;
+};
+void displayCashier();
+int main()
+{
+  cout << "\033[H\033[2J" << endl
+}
+void displayCashier()
+{
+  cout << "\033[H\033[2J" << endl
+  cout << left;
+  cout << setw(80) << string('-', 80) << endl;
+  cout << setw(79) << '-' << '-' << endl;
+  cout << '-' << setw(24) << "Serendipity Book Sellers" << setw(54) << string(' ', 54) << '-' << endl;
+  cout << setw(79) << '-' << '-' << endl;
+  cout << '-' << "Date: " << setw(8) << currentDate << setw(64) << string(' ', 64) << '-' << endl;
+  cout << '-' << "QTY  ISBN          TITLE" << setw(54) << string(' ', 54) << '-' << endl;
+  cout << setw(80) << string('-', 80) << endl;
+  cout << '-' << setw(3) << book.quantity << "  " << setw(13) << book.isbn << setw(37) << book.title << " $" << right << setw(7) << book.price;
+  cout << "    $" << setw(7) << singleTotal << " -" << endl;
+  cout << left;
+  cout << setw(79) << '-' << '-' << endl;
+  cout << setw(79) << '-' << '-' << endl;
+  cout << 
+}
