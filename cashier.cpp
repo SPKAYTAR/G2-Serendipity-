@@ -37,7 +37,6 @@ void cashier()
     cout << endl << endl << "Press ENTER to return to the main menu...";
     cin.ignore();
     getline(cin, exitString); // waits for user to press Enter
-    return 0;
 }
 
 bookType getBookInfo()
