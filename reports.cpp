@@ -29,12 +29,12 @@ void reports(){
         cout << "Serendipity Booksellers\n";
         cout << "Reports\n";
         cout << "------------------------------\n";
-        cout << "1. Inventory Listing\n";
-        cout << "2. Inventory Wholesale Value\n";
-        cout << "3. Inventory Retail Value\n";
-        cout << "4. Listing by Quantity\n";
-        cout << "5. Listing by Cost\n";
-        cout << "6. Listing by Age\n";
+        cout << "1. Listing report\n";
+        cout << "2. Wholesale report\n";
+        cout << "3. Retail report\n";
+        cout << "4. Quantity report\n";
+        cout << "5. Cost report\n";
+        cout << "6. Age report\n";
         cout << "7. Return to the Main Menu\n";
         cout << "------------------------------\n";
         cout << "Enter choice: ";

@@ -29,7 +29,7 @@ int main(){
         cout << "Main Menu\n";
         cout << "------------------------------\n";
         cout << "1. Cashier Module\n";
-        cout << "2. Inventory Database\n";
+        cout << "2. Inventory menu\n";
         cout << "3. Report Module\n";
         cout << "4. Exit\n";
         cout << "------------------------------\n";
