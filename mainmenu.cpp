@@ -22,6 +22,7 @@ int main(){
     char c;
     string input;
     do {
+		  c = '0';
         cout << "\x1B[2J\x1B[H";
         cout << "==============================\n";
         cout << "Serendipity Booksellers\n";

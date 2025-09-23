@@ -23,6 +23,7 @@ void reports(){
     string input;
     char c;
     do{
+		  c = '0';
         cout << "\x1B[2J\x1B[H";
         cout << "==============================\n";
         cout << "Serendipity Booksellers\n";

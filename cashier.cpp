@@ -44,9 +44,9 @@ bookType getBookInfo()
     bookType book;
     cout << "Serendipity Book Sellers" << endl;
     cout << "Cashier Module" << endl;
-  
+
     cout << "Date: ";
-    cin.ignore();
+	 if (cin.peek() == '\n') cin.ignore();
     getline(cin, book.date);
     
   
