@@ -12,6 +12,58 @@
 #include <iomanip>
 #include <cctype>
 #include <vector>
-#include <thread> //needed for pauseSeconds(x);
-#include <chrono>
+#include <limits>
 using namespace std;
+#include "reports.h";
+#include "invmenu.h";
+#include "cashier.h";
+
+int main(){
+    char c;
+    do {
+        cout << "\x1B[2J\x1B[H";
+        cout << "==============================\n";
+        cout << "Serendipity Booksellers\n";
+        cout << "Main Menu\n";
+        cout << "------------------------------\n";
+        cout << "1. Cashier Module\n";
+        cout << "2. Inventory Database\n";
+        cout << "3. Report Module\n";
+        cout << "4. Exit\n";
+        cout << "------------------------------\n";
+        cout << "Enter choice: ";
+
+        cin >> c;
+
+        switch(c){
+
+            case '1': {
+                cashier();
+                break;
+            }
+
+            case '2': {
+                invMenu();
+                break;
+            }
+
+            case '3': {
+                reports();
+                break;
+            }
+
+            case '4': {
+                break;
+            }
+            default: {
+                cout << "\x1B[2J\x1B[H";
+                cout << "Invalid entry, enter a value 1 -> 4, press enter to continue"
+                pause();
+                break;
+
+            }
+        }
+    }while (c != '4');
+
+    return 0;
+}
