@@ -58,8 +58,7 @@ int main(){
             default: {
                 cout << "\x1B[2J\x1B[H";
                 cout << "Invalid entry, enter a value 1 -> 4, press enter to continue";
-                cin.ignore(numeric_limits<streamsize>::max(),'\n');
-                cin.get();
+                void pause()
                 break;
 
             }

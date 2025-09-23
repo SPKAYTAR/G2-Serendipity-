@@ -15,7 +15,7 @@
 #include <limits>
 using namespace std;
 #include "reports.h"
-void pause();
+#include "invmenu.h"
 
 
 
@@ -125,7 +125,3 @@ void repAge(){
     pause();
 }
 
-void pause(){
-  cin.ignore(numeric_limits<streamsize>::max(),'\n');
-  cin.get();
-}

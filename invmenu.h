@@ -15,6 +15,6 @@ void lookUpBook();
 void addBook();
 void editBook();
 void deleteBook();
-
+void pause();
 
 #endif 
