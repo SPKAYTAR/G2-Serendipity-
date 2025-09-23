@@ -39,18 +39,9 @@ int main(){
     if (input.length() == 1 && isdigit(input[0])) {
     c = input[0];
     
-    } else {
-    c = '0';
-    cout << "\x1B[2J\x1B[H";
-    cout << "Invalid entry, enter a value 1 -> 4, press enter to continue." << endl;
-    pause();
     }   
 
         switch(c){
-
-            case '0': {
-                break;
-            }
 
             case '1': {
                 cashier();
