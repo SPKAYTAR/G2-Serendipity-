@@ -18,7 +18,7 @@ using namespace std;
 
 void invMenu(){
     string input;
-    char c = 0;
+    char c;
     do{
     cout << "\x1B[2J\x1B[H";
     cout << "==============================\n";
@@ -38,15 +38,17 @@ void invMenu(){
     if (input.length() == 1 && isdigit(input[0])) {
     c = input[0];
     } else {
-    cin.ignore();
+    c = '0';
     cout << "\x1B[2J\x1B[H";
     cout << "Invalid entry, enter a value 1 -> 5, press enter to continue." << endl;
     pause();
     }
 
     switch(c){
-        
-        case '0': break;
+
+        case '0': {
+            break;
+        }
 
         case '1': {
             lookUpBook();
@@ -109,6 +111,5 @@ void deleteBook(){
 }
 
 void pause(){
-  cin.ignore(numeric_limits<streamsize>::max(),'\n');
   cin.get();
 }

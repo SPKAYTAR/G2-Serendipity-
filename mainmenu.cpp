@@ -19,7 +19,7 @@ using namespace std;
 #include "cashier.h"
 
 int main(){
-    char c = 0;
+    char c;
     string input;
     do {
         cout << "\x1B[2J\x1B[H";
@@ -40,7 +40,7 @@ int main(){
     c = input[0];
     
     } else {
-    cin.ignore();
+    c = '0';
     cout << "\x1B[2J\x1B[H";
     cout << "Invalid entry, enter a value 1 -> 4, press enter to continue." << endl;
     pause();
@@ -48,8 +48,10 @@ int main(){
 
         switch(c){
 
-            case '0': break;
-            
+            case '0': {
+                break;
+            }
+
             case '1': {
                 cashier();
                 break;
