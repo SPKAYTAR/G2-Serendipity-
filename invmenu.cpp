@@ -15,7 +15,6 @@
 #include <limits>
 using namespace std;
 #include "invmenu.h"
-void pause();
 
 void invMenu(){
     char c;

@@ -22,6 +22,23 @@ struct bookType {
 };
 void displayCashier(const bookType& book, double subtotal, double tax, double total);
 bookType getBookInfo();
+void cashier()
+{
+   cout << "\033[H\033[2J" << endl;
+   bookType book = getBookInfo();
+
+
+    double subtotal = book.quantity * book.price;
+    double tax      = subtotal * 0.06;
+    double total    = subtotal + tax;
+ 
+    displayCashier(book, subtotal, tax, total);
+    string exitString;
+    cout << endl << endl << "Press ENTER to return to the main menu...";
+    cin.ignore();
+    getline(cin, exitString); // waits for user to press Enter
+    return 0;
+}
 
 bookType getBookInfo()
 {
