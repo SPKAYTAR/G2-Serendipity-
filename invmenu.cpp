@@ -36,7 +36,7 @@ void invMenu(){
     getline(cin, input);
 
     if (input.length() == 1 && isdigit(input[0])) {
-    choice = input[0];
+    c = input[0];
     } else {
     cout << "Invalid entry, enter a value 1 -> 5, press enter to continue." << endl;
     pause();
