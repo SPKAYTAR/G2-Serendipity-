@@ -68,7 +68,7 @@ bookType getBookInfo()
     book.title = book.title.substr(0, 37);
 	 }
 
-    cout << "Price: ";
+    cout << "Price: $";
     cin >> book.price;
 
     
