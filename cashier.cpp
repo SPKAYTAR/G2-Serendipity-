@@ -47,6 +47,7 @@ bookType getBookInfo()
   
     cout << "Date: ";
     getline(cin, book.date);
+    cin.ignore();
   
     cout << "Quantity: ";
     cin >> book.quantity;
