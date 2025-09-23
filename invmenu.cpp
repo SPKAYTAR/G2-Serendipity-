@@ -39,6 +39,7 @@ void invMenu(){
     c = input[0];
     } else {
     cout << "Invalid entry, enter a value 1 -> 5, press enter to continue." << endl;
+    cout << "\x1B[2J\x1B[H";
     pause();
     }
 

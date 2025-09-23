@@ -45,6 +45,7 @@ void reports(){
     
     } else {
     cout << "Invalid entry, enter a value 1 -> 7, press enter to continue." << endl;
+    cout << "\x1B[2J\x1B[H";
     pause();
     }
 
