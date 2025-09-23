@@ -17,6 +17,6 @@ void repRetail();
 void repQty();
 void repCost();
 void repAge();
-void pause();
+
 
 #endif

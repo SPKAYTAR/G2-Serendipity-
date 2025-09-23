@@ -15,6 +15,7 @@
 #include <limits>
 using namespace std;
 #include "reports.h"
+void pause();
 
 
 

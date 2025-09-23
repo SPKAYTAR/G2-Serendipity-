@@ -11,8 +11,7 @@
 #include <iomanip>
 #include <cctype>
 #include <vector>
-#include <thread> //needed for pauseSeconds(x);
-#include <chrono>
+#include <limits>
 using namespace std;
 struct bookType {
   string date;
@@ -61,7 +60,7 @@ bookType getBookInfo()
     cout << "Price: ";
     cin >> book.price;
 
-    return book;
+    
     return book;
 }
 void displayCashier(const bookType& book, double subtotal, double tax, double total)
