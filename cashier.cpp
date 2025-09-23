@@ -46,8 +46,9 @@ bookType getBookInfo()
     cout << "Cashier Module" << endl;
   
     cout << "Date: ";
-    getline(cin, book.date);
     cin.ignore();
+    getline(cin, book.date);
+    
   
     cout << "Quantity: ";
     cin >> book.quantity;
