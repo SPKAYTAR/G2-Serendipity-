@@ -12,12 +12,97 @@
 #include <iomanip>
 #include <cctype>
 #include <vector>
-#include <thread> //needed for pauseSeconds(x);
-#include <chrono>
+#include <limits>
 using namespace std;
 
+void pause();
+void invMenu();
+void lookUpBook();
+void addBook();
+void editBook();
+void deleteBook();
 
 void invMenu(){
+    char c;
+    do{
+    cout << "\x1B[2J\x1B[H";
+    cout << "==============================\n";
+    cout << "Serendipity Booksellers\n";
+    cout << "Inventory Database\n";
+    cout << "------------------------------\n";
+    cout << "1. Look Up a Book\n";
+    cout << "2. Add a Book\n";
+    cout << "3. Edit a Book's Record\n";
+    cout << "4. Delete a Book\n";
+    cout << "5. Return to the Main Menu\n";
+    cout << "------------------------------\n";
+    cout << "Enter choice: ";
 
+    cin >> c;
+
+    switch(c){
+
+        case '1': {
+            lookUpBook();
+            break;
+        }
+        case '2': {
+            addBook();
+            break;
+        } 
+        case '3': {
+            editBook();
+            break;
+        }
+        case '4': {
+            deleteBook();
+            break;
+        }
+        case '5': {
+            break;
+        }
+        default: {
+            cout << "\x1B[2J\x1B[H";
+            cout << "Invalid entry, enter a value 1 -> 5, press enter to continue";
+            pause();
+            break;
+        }
+                
+    }
+}while( c != '5');
     
+    
+}
+
+void lookUpBook(){
+    cout << "\x1B[2J\x1B[H";
+    cout << "=== Look Up a Book ===\n";
+    cout << "[stub] Feature not implemented yet, Press enter to continue\n\n";
+    pause();
+}
+
+void addBook(){
+    cout << "\x1B[2J\x1B[H";
+    cout << "=== Add a Book ===\n";
+    cout << "[stub] Feature not implemented yet. Press Enter to continue.\n\n";
+    pause();
+}
+
+void editBook(){
+    cout << "\x1B[2J\x1B[H";
+    cout << "=== Edit a Book's Record ===\n";
+    cout << "[stub] Feature not implemented yet. Press Enter to continue.\n\n";
+    pause();
+}
+
+void deleteBook(){
+    cout << "\x1B[2J\x1B[H";
+    cout << "=== Delete a Book ===\n";
+    cout << "[stub] Feature not implemented yet. Press Enter to continue.\n\n";
+    pause();
+}
+
+void pause(){
+  cin.ignore(numeric_limits<streamsize>::max(),'\n');
+  cin.get();
 }
