@@ -58,7 +58,7 @@ int main(){
             default: {
                 cout << "\x1B[2J\x1B[H";
                 cout << "Invalid entry, enter a value 1 -> 4, press enter to continue";
-                void pause()
+                pause();
                 break;
 
             }
