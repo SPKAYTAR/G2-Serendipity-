@@ -21,7 +21,7 @@ using namespace std;
 
 void reports(){
     string input;
-    char c;
+    char c = 0;
     do{
         cout << "\x1B[2J\x1B[H";
         cout << "==============================\n";
@@ -44,12 +44,16 @@ void reports(){
     c = input[0];
     
     } else {
+    cin.ignore();
     cout << "\x1B[2J\x1B[H";
     cout << "Invalid entry, enter a value 1 -> 7, press enter to continue." << endl;
     pause();
     }
 
         switch(c){
+            
+            case '0': break;
+            
             case '1': {
                 repListing();
                 break;
