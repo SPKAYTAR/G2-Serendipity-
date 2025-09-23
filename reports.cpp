@@ -20,6 +20,7 @@ using namespace std;
 
 
 void reports(){
+    string input;
     char c;
     do{
         cout << "\x1B[2J\x1B[H";
@@ -37,7 +38,15 @@ void reports(){
         cout << "------------------------------\n";
         cout << "Enter choice: ";
         
-        cin >> c;
+        getline(cin, input);
+
+    if (input.length() == 1 && isdigit(input[0])) {
+    choice = input[0];
+    
+    } else {
+    cout << "Invalid entry, enter a value 1 -> 7, press enter to continue." << endl;
+    pause();
+    }
 
         switch(c){
             case '1': {
@@ -76,7 +85,7 @@ void reports(){
 
             default :{
                 cout << "\x1B[2J\x1B[H";
-                cout << "Invalid entry, enter a value 1 -> 7, press enter to continue";
+                cout << "Invalid entry, enter a value 1 -> 7, press enter to continue.";
                 pause();
                 break;
             }

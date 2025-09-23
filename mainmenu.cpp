@@ -19,7 +19,8 @@ using namespace std;
 #include "cashier.h"
 
 int main(){
-    char c;
+    char c = 0;
+    string input;
     do {
         cout << "\x1B[2J\x1B[H";
         cout << "==============================\n";
@@ -33,7 +34,15 @@ int main(){
         cout << "------------------------------\n";
         cout << "Enter choice: ";
 
-        cin >> c;
+        getline(cin, input);
+
+    if (input.length() == 1 && isdigit(input[0])) {
+    c = input[0];
+    
+    } else {
+    cout << "Invalid entry, enter a value 1 -> 4, press enter to continue." << endl;
+    pause();
+    }   
 
         switch(c){
 
@@ -57,7 +66,7 @@ int main(){
             }
             default: {
                 cout << "\x1B[2J\x1B[H";
-                cout << "Invalid entry, enter a value 1 -> 4, press enter to continue";
+                cout << "Invalid entry, enter a value 1 -> 4, press enter to continue.";
                 pause();
                 break;
 
