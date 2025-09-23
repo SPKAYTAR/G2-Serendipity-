@@ -14,7 +14,7 @@
 #include <vector>
 #include <limits>
 using namespace std;
-#include "reports.h";
+#include "reports.h"
 
 
 

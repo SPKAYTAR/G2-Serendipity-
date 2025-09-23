@@ -14,13 +14,7 @@
 #include <vector>
 #include <limits>
 using namespace std;
-
-void pause();
-void invMenu();
-void lookUpBook();
-void addBook();
-void editBook();
-void deleteBook();
+#include "invmenu.h"
 
 void invMenu(){
     char c;

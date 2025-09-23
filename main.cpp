@@ -14,9 +14,9 @@
 #include <vector>
 #include <limits>
 using namespace std;
-#include "reports.h";
-#include "invmenu.h";
-#include "cashier.h";
+#include "reports.h"
+#include "invmenu.h"
+#include "cashier.h"
 
 int main(){
     char c;
