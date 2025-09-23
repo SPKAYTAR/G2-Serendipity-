@@ -12,6 +12,7 @@
 #include <cctype>
 #include <vector>
 #include <limits>
+#include <string>
 using namespace std;
 struct bookType {
   string date;
@@ -48,6 +49,9 @@ bookType getBookInfo()
     cout << "Date: ";
 	 if (cin.peek() == '\n') cin.ignore();
     getline(cin, book.date);
+	 if(book.date.length() > 8){
+	 book.date = book.date.substr(0,8);
+	 }
     
   
     cout << "Quantity: ";
@@ -56,9 +60,13 @@ bookType getBookInfo()
 
     cout << "ISBN: ";
     getline(cin, book.isbn);
+    book.isbn = book.isbn.substr(0, 13);
 
     cout << "Title: ";
     getline(cin, book.title);
+	 if (book.title.length() > 37){
+    book.title = book.title.substr(0, 37);
+	 }
 
     cout << "Price: ";
     cin >> book.price;
@@ -77,10 +85,10 @@ void displayCashier(const bookType& book, double subtotal, double tax, double to
   cout << '-' << setw(24) << "Serendipity Book Sellers" << setw(54) << string(54, ' ') << '-' << endl;
   cout << setw(79) << '-' << '-' << endl;
   cout << '-' << "Date: " << setw(8) << book.date << setw(64) << string(64, ' ') << '-' << endl;
-  cout << '-' << "QTY  ISBN          TITLE" << setw(54) << string(54, ' ') << '-' << endl; 
+  cout << '-' << setw(78) << "QTY  ISBN          TITLE                                 Price       Total" << '-' << endl; 
   cout << setw(80) << string(80, '-') << endl;
   //Output book information
-  cout << '-' << setw(3) << book.quantity << "  " << setw(13) << book.isbn << " " << setw(37) << book.title;
+  cout << '-' << right << setw(3) << book.quantity << "  " << left << setw(13) << book.isbn << " " << setw(37) << book.title;
   cout << fixed << setprecision(2) << showpoint << " $" << right << setw(7) << book.price;
   double singleTotal = book.quantity * book.price;
   cout << "    $" << setw(7) << singleTotal << " -" << endl;
